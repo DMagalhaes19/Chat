@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Chat Application</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+    <style>
+        /* Add custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .room-message {
+            text-align: center;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .window {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-message {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .fields {
+            display: flex;
+            align-items: center;
+        }
+
+        #message {
+            flex: 1;
+            height: 40px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #send {
+            background-color: #1a2eda;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .online {
+            max-width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .users-online {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .users {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Add more custom styles as needed */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="room-message">Welcome to My Chat Application</h1>
+    </div>
+    <div class="window">
+        <div class="chat-message">
+            <div id="output"></div>
+            <div id="feedback"></div>
+        </div>
+        <div class="fields">
+            <input type="text" id="message" placeholder="Enter message">
+            <button id="send">Send</button>
+        </div>
+    </div>
+    <div class="online">
+        <p class="users-online">Users Online</p>
+        <div class="users">
+            <!-- User list can be added here -->
+        </div>
+    </div>
+    <script src="/chat.js"></script>
+</body>
+</html>
